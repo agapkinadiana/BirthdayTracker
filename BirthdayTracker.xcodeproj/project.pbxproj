@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		ED04BB3C24D87EF000126281 /* BirthdayTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BirthdayTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED04BB3C24D87EF000126281 /* Birthdays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Birthdays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED04BB3F24D87EF000126281 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED04BB4124D87EF000126281 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		ED04BB4324D87EF000126281 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 		ED04BB3D24D87EF000126281 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ED04BB3C24D87EF000126281 /* BirthdayTracker.app */,
+				ED04BB3C24D87EF000126281 /* Birthdays.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,7 +87,7 @@
 			);
 			name = BirthdayTracker;
 			productName = BirthdayTracker;
-			productReference = ED04BB3C24D87EF000126281 /* BirthdayTracker.app */;
+			productReference = ED04BB3C24D87EF000126281 /* Birthdays.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -296,7 +296,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.diana.BirthdayTracker;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Birthdays;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -314,7 +314,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.diana.BirthdayTracker;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Birthdays;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
