@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 class BirthdaysTableTableViewController: UITableViewController  {
     
@@ -85,23 +86,31 @@ class BirthdaysTableTableViewController: UITableViewController  {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
-        if birthdays.count > indexPath.row {
+        // Защита от ошибок неверного указания индекса
+        if birthdays.count > indexPath.row{
             let birthday = birthdays[indexPath.row]
             
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let context = appDelegate.persistentContainer.viewContext
-            
-            context.delete(birthday)
-            
-            birthdays.remove(at: indexPath.row)
-            
-            do {
-                try context.save()
-            } catch let error {
-                print("Не удалось сохранить из-за ошибки \(error).")
+            // Удаление уведомления
+            if let identifier = birthday.birthdayId {
+                let center = UNUserNotificationCenter.current()
+                center.removePendingNotificationRequests(withIdentifiers: [identifier])
             }
             
-            tableView.deleteRows(at:[indexPath],with: .fade)
+            // Удаление из контекста
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            context.delete(birthday)
+            
+            // Удаление строки из БД
+            birthdays.remove(at: indexPath.row)
+            do{
+                try context.save()
+            } catch let error {
+                print("Не удалось сохранить из-за ошибки\(error).")
+            }
+            
+            // Удаление строки из таблицы
+            tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
 
